@@ -1,0 +1,287 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "escola",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.649528997209.1045521869053"
+              }
+            },
+            {
+              "name": "segmento",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.649528997209.72762669394"
+              }
+            },
+            {
+              "name": "serie",
+              "elicitationRequired": true,
+              "type": "AMAZON.FirstName",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.297504597077.675743513175"
+              }
+            },
+            {
+              "name": "materia",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.297504597077.1616372588105"
+              }
+            },
+            {
+              "name": "questao",
+              "elicitationRequired": true,
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.297504597077.1046724261640"
+              }
+            }
+          ],
+          "name": "LerProvaIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.297504597077"
+          }
+        },
+        {
+          "slots": [
+            {
+              "name": "codigo",
+              "elicitationRequired": true,
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.886557347440.489389226475"
+              }
+            }
+          ],
+          "name": "InserirCodigoIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.886557347440"
+          }
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "slots": [],
+          "name": "HelloWorldIntent",
+          "samples": [
+            "olá",
+            "como vai você",
+            "diga oi mundo",
+            "diga oi",
+            "oi",
+            "diga olá mundo",
+            "diga olá"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "escola",
+              "type": "AMAZON.SearchQuery"
+            },
+            {
+              "name": "segmento",
+              "type": "AMAZON.SearchQuery"
+            },
+            {
+              "name": "serie",
+              "type": "AMAZON.FirstName",
+              "samples": [
+                "{serie} série",
+                "{serie} ano",
+                "{serie}"
+              ]
+            },
+            {
+              "name": "materia",
+              "type": "AMAZON.SearchQuery"
+            },
+            {
+              "name": "questao",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "questão {questao}",
+                "{questao}"
+              ]
+            }
+          ],
+          "name": "LerProvaIntent",
+          "samples": [
+            "ler prova"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "RepetirIntent",
+          "samples": [
+            "repete",
+            "repita",
+            "repetir"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "ProxQuestaoIntent",
+          "samples": [
+            "próxima letra",
+            "avançar",
+            "próxima questão",
+            "próxima"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "HoraIntent",
+          "samples": [
+            "hora"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "QuestaoAnteriorIntent",
+          "samples": [
+            "anterior",
+            "questão anterior"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "questao",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "QuestaoEspecificaIntent",
+          "samples": [
+            "questão {questao}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "codigo",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            }
+          ],
+          "name": "InserirCodigoIntent",
+          "samples": [
+            "colocar código",
+            "código",
+            "inserir código"
+          ]
+        }
+      ],
+      "types": [],
+      "invocationName": "abrir provas"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Posso iniciar a leitura da questão {questao} da prova de {materia} do {serie} ano do {segmento} da escola {escola} ?"
+          }
+        ],
+        "id": "Confirm.Intent.297504597077"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "A prova é para qual ano?"
+          }
+        ],
+        "id": "Elicit.Slot.297504597077.675743513175"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é a matéria?"
+          }
+        ],
+        "id": "Elicit.Slot.297504597077.1616372588105"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é a questão?"
+          }
+        ],
+        "id": "Elicit.Slot.297504597077.1046724261640"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "A prova é para Fundamental um, Fundamental dois ou Ensino Médio?"
+          }
+        ],
+        "id": "Elicit.Slot.649528997209.72762669394"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "A prova é de qual escola?"
+          }
+        ],
+        "id": "Elicit.Slot.649528997209.1045521869053"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "qual o código a ser inserido?"
+          }
+        ],
+        "id": "Elicit.Slot.886557347440.489389226475"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "deseja confirmar a inserção do código {codigo} ?"
+          }
+        ],
+        "id": "Confirm.Intent.886557347440"
+      }
+    ]
+  }
+}
